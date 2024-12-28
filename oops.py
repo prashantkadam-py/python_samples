@@ -1,6 +1,6 @@
 class Employee:
     
-    raise_amount = 1.4 #class variable
+    raise_amount = 1.1 #class variable
     no_of_employees = 0
 
     def __init__(self, first, last, pay):
@@ -49,6 +49,43 @@ class Employee:
         return True
 
 
+
+class Developer(Employee):
+    raise_amount = 1.4
+
+    def __init__(self, first, last, pay, language):
+        super().__init__(first, last, pay) #calling parent class init method 
+        #Employee.__init__(self, first, last, pay) #another way to call parent class init method
+        self.language = language
+
+
+class Manager(Employee):
+
+    def __init__(self, first, last, pay, employees=None):
+        super().__init__(first, last, pay)
+        if employees is None:
+            self.employees = []
+        else:
+            self.employees = employees
+        print(f"Employees : {self.employees}")
+
+    def add_emp(self, emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
+
+    def remove_emp(self, emp):
+        if emp in self.employees:
+            self.employees.remove(emp)
+
+    def print_employees(self):
+        for emp in self.employees:
+            print(f"--> {emp.fullname()}" )
+
+        
+
+
+
+
 if __name__ == "__main__":
     print(f"No of employees created : {Employee.no_of_employees}")
     emp_1 = Employee("prashant", "kadam", 50000) #creating an instance emp_1 of Employee class
@@ -81,3 +118,24 @@ if __name__ == "__main__":
     import datetime
     my_date = datetime.datetime.now()
     print(f"Is workday : {Employee.isworkday(my_date)}")
+
+
+    #print(help(Developer)) #Check Method resoltion order and other details
+
+    dev_1 = Developer("Test 1", "user 1", 30000, "Python")
+    dev_2 = Developer("Test 2", "user 2", 20000, "Java")
+
+    mgr_1 = Manager("prashant", "kadam", 60000, employees=[dev_1])
+
+    print(f"Manager Email : {mgr_1.email}")
+    print(f"Manager pay : {mgr_1.pay}")
+    mgr_1.print_employees()
+    mgr_1.add_emp(dev_2)
+    mgr_1.print_employees()
+    
+    print(f"mgr_1 isinstance of developer class : {isinstance(mgr_1, Developer)}")
+    print(f"mgr_1 isinstance of employee class : {isinstance(mgr_1, Employee)}")
+    print(f"Manager issubclass of Employee : {issubclass(Manager, Employee)}")
+    print(f"Developer issubclass of Employee : {issubclass(Developer, Employee)}")
+    print(f"Manager issubclass of Developer : {issubclass(Manager, Developer)}")
+

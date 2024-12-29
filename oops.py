@@ -1,3 +1,10 @@
+"""
+Reference
+Corey Schafer
+https://www.youtube.com/playlist?list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc
+"""
+
+
 class Employee:
     
     raise_amount = 1.1 #class variable

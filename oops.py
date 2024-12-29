@@ -48,6 +48,24 @@ class Employee:
             return False
         return True
 
+    def __repr__(self): #magic or dunder methods
+        """ If __str__ method is not defined 
+        then __repr__ is a fallback method for the same
+        """
+        return f"Employee({self.first}, {self.last}, {self.pay})"
+
+
+    def __str__(self):
+        return f"{self.fullname()} - {self.email}"
+        
+
+    def __add__(self, other):
+        return self.pay + other.pay
+
+
+    def __len__(self):
+        return len(self.fullname())
+
 
 
 class Developer(Employee):
@@ -80,8 +98,6 @@ class Manager(Employee):
     def print_employees(self):
         for emp in self.employees:
             print(f"--> {emp.fullname()}" )
-
-        
 
 
 
@@ -139,3 +155,13 @@ if __name__ == "__main__":
     print(f"Developer issubclass of Employee : {issubclass(Developer, Employee)}")
     print(f"Manager issubclass of Developer : {issubclass(Manager, Developer)}")
 
+    print(f"implicit str : {dev_1}")
+    print(f"implicit str : {dev_2}")
+    print(f"explicit str :  dev_1.__str__()")
+    print(f"explicit repr : dev_1.__repr__()")
+    print(f"explicit str : {str(dev_1)}")
+    print(f"explicit repr : {repr(dev_1)}")
+    print(f"total salary of dev_1 and dev_2 : {dev_1 + dev_2}")
+    print(f"total salary of dev_1 and dev_2 : {dev_1.__add__(dev_2)}")
+    print(f"Length of an object {len(emp_1)}")
+    print(f"Length of an object {emp_1.__len__()}")

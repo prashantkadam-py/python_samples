@@ -165,3 +165,4 @@ if __name__ == "__main__":
     print(f"total salary of dev_1 and dev_2 : {dev_1.__add__(dev_2)}")
     print(f"Length of an object {len(emp_1)}")
     print(f"Length of an object {emp_1.__len__()}")
+

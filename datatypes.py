@@ -3,6 +3,7 @@ Reference
 Corey Schafer
 
 https://www.youtube.com/watch?v=k9TUPpGqYTo&list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7&index=2
+videos : 1 to 5
 """
 
 
@@ -26,3 +27,25 @@ print(f"Exponent ** :  {a**b}")
 print(f"Modulus % :  {a%b}")
 print(f"Absolute value of -3 :  {abs(-3)}")
 print(f"Round upto 2 digits:  {round(100/3, 2)}")
+
+
+print(f"\n\n {'#'*10} Lists, Tuples and Sets {'#'*10}")
+courses = ["History", "Maths", "Physics", "CompSci"]
+empty_list = []
+empty_list = list()
+print(f"Find the index of element Compsci in list: {courses.index('CompSci')}")
+courses = ("History", "Maths", "Physics", "CompSci") # tuples are immutable, can't modify unlike list
+empty_tuple = ()
+empty_tuple = tuple()
+print(f"Tuple example : {courses}")
+art_courses = {"History", "Hindi", "English"}
+sci_courses = {"History", "Maths", "Physics", "CompSci"}
+empty_set = set()
+print(f"Set Example : {art_courses}")
+
+
+print(f"\n\n {'#'*10} Dictionaries {'#'*10}")
+student = {"name" : "John", "age" : 25, "courses" : ["Math", "CompSci"]}
+del student['age']
+student.pop("name")
+print(f"Delete key : {student}")

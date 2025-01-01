@@ -3,7 +3,7 @@ Reference
 Corey Schafer
 
 https://www.youtube.com/watch?v=k9TUPpGqYTo&list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7&index=2
-videos : 1 to 5
+videos : 2 to 5
 """
 
 

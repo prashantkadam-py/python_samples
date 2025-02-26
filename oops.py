@@ -2,6 +2,14 @@
 Reference
 Corey Schafer
 https://www.youtube.com/playlist?list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc
+
+- class variable
+- property - getter, setter, deleter
+- classmethod
+- staticmethod
+- dunder method / magic method
+- inheritance
+- super
 """
 
 

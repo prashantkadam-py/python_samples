@@ -17,9 +17,9 @@ class Person:
 
     #constructor
     def __init__(self, name, age, dob):
-        self.__name = name           #protected access modifiers can be access within class
-        self.__age = age             #protected access modifiers 
-        self._dob = dob              #private access modifiers can be access by child class
+        self.__name = name           #private access modifiers can be access within class
+        self.__age = age             #private access modifiers 
+        self._dob = dob              #protected access modifiers can be access by child class
 
 
 
@@ -33,7 +33,7 @@ class Student(Person):
 
     def __init__(self, name, age, dob):
         super().__init__(name, age, dob)
-        print(f"dob is [self._dob]")    
+        print(f"dob is {self._dob}")    
 
 
 if __name__ == "__main__":
